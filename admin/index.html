@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .edit-form {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <form id="addProductForm">
+        <input type="text" id="name" placeholder="Название" required>
+        <input type="number" id="price" placeholder="Цена" required>
+        <input type="text" id="description" placeholder="Описание">
+        <input type="text" id="categories" placeholder="Категории (через запятую)">
+        <button type="submit">Добавить товар</button>
+    </form>
+
+    <form id="editProductForm" class="edit-form">
+        <input type="hidden" id="editId">
+        <input type="text" id="editName" placeholder="Название" required>
+        <input type="number" id="editPrice" placeholder="Цена" required>
+        <input type="text" id="editDescription" placeholder="Описание">
+        <input type="text" id="editCategories" placeholder="Категории (через запятую)">
+        <button type="submit">Сохранить изменения</button>
+        <button type="button" id="cancelEdit">Отмена</button>
+    </form>
+
+    <table id="productsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Описание</th>
+                <th>Категории</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <div id="chat">
+        <h2>Чат поддержки</h2>
+        <div id="chat-box"></div>
+        <input type="text" id="message-input" placeholder="Введите сообщение">
+        <button onclick="sendMessage()">Отправить</button>
+    </div>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>

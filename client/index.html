@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .categories {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .categories button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        .categories button:hover {
+            background-color: #0056b3;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product-card h2 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .product-card p {
+            margin: 10px 0;
+            color: #555;
+        }
+        .product-card .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .product-card .categories {
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Каталог товаров</h1>
+    <div class="categories">
+        <button onclick="filterProducts('all')">Все товары</button>
+        <button onclick="filterProducts('Электроника')">Электроника</button>
+        <button onclick="filterProducts('Бытовая техника')">Бытовая техника</button>
+        <button onclick="filterProducts('Уборка')">Уборка</button>
+    </div>
+    <div class="products" id="productsContainer">
+
+    </div>
+    <div id="chat">
+        <h2>Чат поддержки</h2>
+        <div id="chat-box"></div>
+        <input type="text" id="message-input" placeholder="Введите сообщение">
+        <button onclick="sendMessage()">Отправить</button>
+    </div>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
