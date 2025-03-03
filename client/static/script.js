@@ -77,7 +77,7 @@ socket.on('message', function(data) {
 
 function sendMessage() {
     const input = document.getElementById('message-input');
-    const message = input.value.trim();
+    const message = "Client: " + input.value.trim();
     
     if(message) {
         socket.emit('message', {data: message});
