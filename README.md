@@ -1,7 +1,7 @@
-pip install -r requirements.txt
+docker-compose up --build
 
-python admin/app.py
+admin - http://localhost:3000/
 
-python client/app.py
+client - http://localhost:8080/
 
-python websocket/app.py
+websocket - http://localhost:5000/

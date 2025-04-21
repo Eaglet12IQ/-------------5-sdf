@@ -1,0 +1,39 @@
+services:
+  admin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python admin/app.py
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python client/app.py
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  websocket:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python websocket/app.py
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
